@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 23, 2021 at 08:35 PM
+-- Generation Time: Oct 23, 2021 at 10:43 PM
 -- Server version: 10.3.27-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -113,13 +113,6 @@ CREATE TABLE `users` (
   `last_active` text DEFAULT NULL,
   `online_status` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`date`, `id`, `type`, `username`, `password`, `email`, `verify`, `agree`, `notify`, `first_login`, `2fa`, `friends`, `last_active`, `online_status`) VALUES
-('2021-07-07 16:51:31', 80, 1, 'dallan', '$2y$10$cvrXiADvXQ0sSUIDaj4V5eXHdi.ZgzhJpLi7v639yH8/iPF2hXf3a', 'dallanjones@pm.me', 1, 1, 0, 0, 0, NULL, '1635011188', '0');
 
 --
 -- Indexes for dumped tables
