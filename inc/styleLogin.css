@@ -1,0 +1,208 @@
+body {
+        margin: 0;
+        background:#2f3136;
+        font-family: 'Roboto', sans-serif;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container {
+	display: flex;
+
+}
+
+.panel {
+	background:#35393f;
+  width:325px;
+  color: #dcddde; 
+  position: relative;
+}
+
+.bubble { position: absolute; clear: both;width: 100%;right: 0} /* clear the floats here on parent */
+.bubble p {
+	opacity: .85;
+    border-radius: 5px;
+    padding: .5em; 
+    margin: .5em .75em;
+    max-width: 80%;  /* this will make it not exceed 80% and then wrap */
+    position: relative; 
+}
+.left p { float: left; } /* floated left */
+.right p { float: right; } /* floated right */
+.right p::after {
+    content: ''; position: absolute;
+    width: 0; height: 0; right: -8px; top: 8px;
+    border-top: 4px solid transparent;
+    border-left: 8px solid;
+    border-bottom: 4px solid transparent;
+}
+.left p::before {
+    content: ''; position: absolute;
+    width: 0; height: 0; left: -8px; top: 8px;
+    border-top: 4px solid transparent;
+    border-right: 8px solid;
+    border-bottom: 4px solid transparent;
+}
+.right .success::after {
+    border-left: 8px solid #31a563;  
+}
+.right .info::after {
+    border-left: 8px solid #4569ec;  
+}
+.left .success::before {
+    border-right: 8px solid #31a563;  
+}
+.left .info::before {
+    border-right: 8px solid #4569ec;  
+}
+
+.alert {
+	padding:1em;
+	margin-bottom:1.5em;
+	border-radius:5px;
+	transition: 100ms linear;
+  color:#dcddde;
+}
+
+.closeAlert {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closeAlert:hover {
+  color: #ccc;
+}
+
+.error {
+  background:#f43d47;
+}
+.success {
+  background:#31a563;
+}
+.info {
+  background:#4569ec;
+}
+
+.login-form {
+	border-bottom: 1px solid #3f444b;
+}
+
+.input, .submit {
+	height:50px;
+	width:100%;
+	border:none;
+	border-radius:5px;
+	font-size:16px;
+	transition: 100ms linear;
+}
+.input:hover, .submit:hover, .alert:hover {
+	transform: scale(1.05);
+}
+
+.input {
+	background: #3f444b;
+	padding:1em;
+	margin-bottom:1.5em;
+	color: #b9bbbe;
+}
+
+.submit {
+	margin-top:1em;
+	background: #4569ec;
+	margin-bottom:.5em;
+	cursor:pointer;
+	color: #dcddde;
+}
+.grey {
+	background: #2f3136;
+	color: #dcddde;
+}
+
+.rememberForgot {
+	display:flex;
+	font-size:12px;
+	align-items: center;
+}
+.rememberForgot > div:last-child {
+	margin-left:auto;
+}
+
+.registerChecks {
+	display:flex;
+	font-size:12px;
+	flex-direction: column;
+}
+	.registerChecks > div:first-child {
+		margin-bottom:.5em;
+	}
+	
+
+
+.reCAPTCHA {
+	margin-top:1em;
+	font-size:12px;
+}
+
+@media only screen and (max-width: 29.8125rem /*477px*/) {
+    body {
+    	background:#35393f;
+    }
+    .panel {
+    	padding:2em;
+    	width:100%;
+    }
+}
+@media only screen and (min-width: 29.8125rem /*477px*/) {
+    .container {
+    	justify-content: center;
+	    align-items: center;	
+	    height: 100vh;
+    }
+    .panel {
+    	border-radius:6px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+		padding:4em;
+    }
+}
+
+/* Password conditions box */
+.passwordConditions {
+	width:100%;
+	border-radius:5px;
+	font-size:14px;
+	background: #f7f7f7;
+	margin-bottom:1.5em;
+}
+.passwordConditions > p {
+	padding:1em .25em .25em 1em;
+}
+/* Add a green text color and a checkmark when the requirements are right */
+.valid, .invalid {
+	
+}
+.valid {
+  color: #62c834;
+}
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: #666;
+}
+#conditions, #match, #userConditions {
+	display: none;
+}
+
+.formTitle {
+	font-size: 20px;
+	padding-bottom: .5em;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 1em;
+	color: #333;
+}

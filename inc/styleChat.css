@@ -1,0 +1,608 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	margin:auto;
+	background:#35393f;
+	height: 100%;
+}
+a { text-decoration: none; color:inherit; }
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+     .clearfix:after {visibility: hidden; display: block; font-size: 0; content:''; clear: both; height: 0; } 
+
+.contentContainer {
+	display:flex;
+	position: relative;
+}
+
+.padding {
+	padding: 1em;
+}
+.padding5 {
+	padding: .5em;
+}
+
+.navContainer {
+	background:#2f3136;/*885A89*/
+	color: #8d9297;
+	min-height:calc(100vh - 0em);
+}
+
+
+
+
+.friendList {
+	display:flex;
+	flex-direction: column;
+}
+.friendList > div {
+	flex:1;
+	padding: .5em;
+}
+.friendList > div:hover {
+	border-radius: 5px;
+	background: #383c42;
+}
+
+.friendInfo {
+	display:flex;
+	flex-direction: row;
+	align-items:center;
+}
+.friendInfo: {
+	border-radius: 10px;
+	background: #383c42;
+}
+.friendInfo > div:first-child {
+	border-radius: 50%;
+	margin-right:10px;
+	padding:3px;
+}
+.friendInfo > div:first-child img {
+	border-radius: 50%;
+	width:40px;
+}
+.friendInfo > div:last-child {
+	flex:1;
+}
+.friendListUsername {
+	text-align: left;
+	position: relative;
+}
+.start_chat, .topNav button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.start_chat {
+	width: 100%;
+}
+.msgCount {
+	background:#f2412b;
+  color:#fff;
+	padding: .125em .5em;
+	border-radius: 50%;
+	opacity: .75;
+	font-size:.75rem;
+	position: absolute;
+	left: 90%;
+}
+
+/* SEND MSG */
+.msg_container {
+  width:100%;
+  padding: 0 1em 1em 1em;
+  background: #35393f;
+ 	height: 100%; 
+}
+
+.msg_container form {
+	margin: 0;
+}
+.msg_input, .msg_submit {
+	height:50px;
+	float: left;
+	background: #3f444b;
+	border: none;
+	color: #b9bbbe;
+	font-size: 1rem;
+}
+.msg_input {
+	width:90%;
+	border-radius: 10px 0 0px 10px;
+	padding-left: 1em;
+}
+.msg_submit {
+	width:10%;
+	border-radius: 0 10px 10px 0;
+}
+
+.chat {
+	max-height:calc(100vh - 9em);
+	min-height:calc(100vh - 9em);
+	overflow: hidden;
+}
+
+.profileModal {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	background: blue;
+}
+
+
+
+
+*:focus{
+ outline: none;
+}
+
+.myProfile {
+	display: flex;
+	align-items: center;
+	margin: 0 0 .5em 0;
+}
+
+#chatContainer  span {
+  position: relative;
+  top: 2000px;
+}
+#chatContainer {
+	max-height: 100%;
+	overflow-x: hidden;	
+	margin-bottom: 66px;
+	max-height:calc(100vh - 9em);
+	min-height:calc(100vh - 9em);
+}
+.chat_bottom {
+	height:40px;
+	width:100%;
+}
+
+.top_of_chat {
+	display:flex;
+	background:#2f3136;
+	align-items:center;
+}
+.top_of_chat > div:last-child {
+	margin-left:auto;
+}
+
+.bubble { flex: 1 1 auto; clear: both;} /* clear the floats here on parent */
+.bubble p {
+    border-radius: 5px;
+    padding: .5em; 
+    margin: .5em .75em;
+    max-width: 80%;  /* this will make it not exceed 80% and then wrap */
+    position: relative; 
+}
+.left p { background-color: #2f3136; color: #b9bbbe; float: left; } /* floated left */
+.right p { background-color: #4569ec; color: #fff; float: right; } /* floated right */
+/* classes below are only for arrows, not relevant */
+.left p::before {
+    content: ''; position: absolute;
+    width: 0; height: 0; left: -8px; top: 8px;
+    border-top: 4px solid transparent;
+    border-right: 8px solid #2f3136;
+    border-bottom: 4px solid transparent;
+}
+.right p::after {
+    content: ''; position: absolute;
+    width: 0; height: 0; right: -8px; bottom: 8px;
+    border-top: 4px solid transparent;
+    border-left: 8px solid #4569ec;
+    border-bottom: 4px solid transparent;
+}
+
+.bubbleContainer {
+	display:flex;
+/*	align-items:center;*/
+	width: 100%;
+}
+.bubbleContainer > div:first-child img {
+	border-radius:50%;
+	width:30px;
+}
+.bubbleContainer:first-of-type .bubble p {
+	margin: 0 .75em .75em .75em;
+}
+.bubbleContainer:first-of-type img {
+	margin: 0
+}
+.bubbleContainer > div img {
+	margin-top: .5em;
+}
+
+
+
+
+/* SETTINGS */
+
+
+div > p {
+	margin-top:0;
+	margin-bottom:5px;
+}
+.breakContainer {
+	display:flex;
+	border-bottom:1px solid #ccc;
+}
+.breakContainer > div {
+	padding:0px 0px 25px 25px;
+
+}
+
+.input {
+	height:50px;
+	width:100%;
+	border:none;
+	border-radius:5px;
+	font-size:16px;
+	transition: 100ms linear;
+}
+.input:hover, .changePicButton:hover, .saveButton:hover, .removeFriend:hover {
+	transform: scale(1.0125);
+}
+
+.input {
+	background: #3f444b;
+	padding:1em;
+	margin-bottom:1.5em;
+	color: #b9bbbe;
+}
+
+.changePicButton {
+	background: #4569ec;
+	width:100%;
+}
+.saveButton {
+	background: #31a563;
+}
+.changePicButton, .saveButton {	
+	padding: .75em 1.5em;
+	border:none;
+	border-radius:5px;
+	font-size:1rem;
+	cursor:pointer;
+	transition: 100ms linear;
+	color: #dcddde;
+}
+
+	/* panel 1 */
+
+	.formTitle {
+		font-size: 1.25rem;
+		padding-bottom: .5em;
+		border-bottom: 1px solid #41454a;
+		margin-bottom: 1em;
+		color: #8d9297;
+	}
+	.title {
+		font-size: 1.25rem;
+		color: #8d9297;
+		margin-left: .5em;
+	}
+
+	.profileContainer {
+		align-items: center;
+	}
+
+	.accountContainer, .profileContainer {
+		display: flex;
+		max-width: 940px;
+
+	}
+	.accountContainer > div, .profileContainer > div {
+		padding: 1em;
+	}
+	.profileContainer > div:first-child {
+		flex: .25;
+	}
+	.profileContainer > div:nth-child(2) {
+		flex: 1;
+	}
+	.accountContainer > div:first-child {
+		flex: 1;
+	}
+	.accountContainer > div:nth-child(2) {
+		flex: .25;
+	}
+	.accountContainer img, .profileContainer img {
+		opacity: .6;
+		width: 100%;
+		margin-top: .3em;
+		margin-bottom: 1.25em;
+		border-radius:5px;
+	}
+	.profileContainer img {
+		border-radius: 50%;
+	}
+
+	p.formSubtitle {
+		padding: 0;
+		margin: 0 0 .5em 0;
+	}
+	p.formTitle {
+		padding: 0;
+		margin: 1em 0;
+	}
+
+	.profileSettingsContainer {
+		display:flex;
+		flex-direction: column;
+	}
+	.profileSettingsContainer > div:not(:last-child) {
+		flex:1;
+		margin-bottom:15px;
+	}
+	.settingsInput {
+		height:40px;
+		width:100%;
+		border:1px solid #ccc;
+		border-radius:5px;
+	}
+
+	.settingsTextArea {
+		width:100%;
+		border:1px solid #ccc;
+		border-radius:5px;
+		resize: vertical;
+	}
+
+	/* panel 2 */
+	.profilePicContainer {
+		display:flex;
+		flex-direction:column;
+	}
+	.profilePicContainer > div > img {
+		border-radius:5px;
+	}
+	.profilePicContainer > div {
+		flex:1;
+		margin-bottom:15px;
+	}
+
+.alert {
+	padding:1em;
+	margin-bottom:1.5em;
+	border-radius:5px;
+	
+	position: fixed;
+  left: 50%;
+  transition: 0.3s;
+  margin-top: 1em;
+  z-index: 100;
+  animation: slideInFromTop .5s linear 0s 1 normal forwards;
+	opacity: 0;
+
+}
+@keyframes slideInFromTop {
+  0% {
+    -ms-transform: translate(-50%, -100%);
+	  -moz-transform: translate(-50%, -100%);
+	  -webkit-transform: translate(-50%, -100%);
+	  transform: translate(-50%, -100%);
+  }
+  100% {
+   	-ms-transform: translate(-50%, 0%);
+	  -moz-transform: translate(-50%, 0%);
+	  -webkit-transform: translate(-50%, 0%);
+	  transform: translate(-50%, 0%);
+	  opacity: 1;
+  }
+}
+@keyframes slideToTop {
+  0% {
+    -ms-transform: translate(-50%, 0%);
+	  -moz-transform: translate(-50%, 0%);
+	  -webkit-transform: translate(-50%, 0%);
+	  transform: translate(-50%, 0%);
+	  opacity: 1;
+  }
+  100% {
+   	-ms-transform: translate(-50%, -100%);
+	  -moz-transform: translate(-50%, -100%);
+	  -webkit-transform: translate(-50%, -100%);
+	  transform: translate(-50%, -100%);
+	  opacity: 0;
+  }
+}
+
+.closeAlert {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  /*transition: 0.3s;*/
+}
+
+.closeAlert:hover {
+  color: #ccc;
+}
+
+.error {
+  background:#f2412b;
+  color:#fff;
+}
+.success {
+  background:#62c834;
+  color:#fff;
+}
+.info {
+  background:#BDE5F8;
+  color:#fff;
+}
+
+
+/* FRIENDS LIST */
+
+.addFriendInput, .sendMsg {
+	display: flex;
+}
+.addFriendInput form {
+	width: 80%;
+	margin: 0;
+	margin-bottom: .5em;
+}
+
+.search_friend {
+	background: #202225;
+	border-radius:5px 0 0 5px;
+	padding-left: 1em;
+}
+
+.search_friend, .submit_friend {
+	height:40px;
+	border:none;
+	background: #202225;
+	color: #8d9297;
+}
+.submit_friend {
+	width:20%;
+	border-radius:0 5px 5px 0;
+	padding-left: 0 1em;
+}
+button {
+	cursor: pointer;
+}
+
+.friendRequest {
+	display: flex;
+	flex-direction: column;
+	
+}
+.friendRequest > div {
+	flex: 1;
+}
+
+.requestButton {	
+	padding: .25em .75em;
+	border:none;
+	border-radius:5px;
+	font-size:1rem;
+	cursor:pointer;
+	transition: 100ms linear;
+	color: #dcddde;
+}
+
+.green {
+	background: #31a563;
+}
+
+#chats {
+	display: none;
+}
+
+@media screen and (max-width: 37.5rem /*477px*/) {
+    .navContainer {
+	    position: fixed;
+		  left: -261px;
+		  transition: 0.3s;
+		  z-index: 1;
+		  text-decoration: none;
+		  border-radius: 0 5px 5px 0;
+		  background: #18181c;
+		  opacity: .95;
+    }
+    .navContainer::after {
+	    content: ''; position: absolute;
+	    width: 0; height: 0; right: -60px; top: 15px;
+	    border-top: 30px solid transparent;
+	    border-left: 60px solid #18181c;
+	    border-bottom: 30px solid transparent;
+	    opacity: 1;
+		}
+    .navContainer:hover {
+    	left: 0;
+    }
+
+    #chats {
+    	display: inline-block;
+    }
+    .top_of_chat {
+    	padding-left: 1em;
+    }
+    .accountContainer {
+    	flex-direction: column-reverse;
+    }
+    .accountContainer > div {
+    	flex: 1;
+    }
+
+    .search_friend {
+    	width: 100%;
+    }
+    
+    .alert { 
+    width:100%;
+    }
+}
+
+.chatWindow {
+	display: none;
+}
+
+/* User profile and nav links */
+.myProfile {
+
+}
+.topNav {
+	display:flex;
+	margin-left: auto;
+}
+.topNav > button {
+
+}
+.topNav > button {
+	cursor:pointer;
+	font-size:1rem;
+	color:#8d9297;
+	padding: .5em;
+}
+.topNav > button:hover {
+	background:#383c42;
+	border-radius: 5px;
+}
+
+/* Chat session styling */
+.chatContainer {
+	color: #8d9297;
+	flex:1;
+	max-width: 100%;
+	display: none;
+	flex-direction: column;
+}
+
+#profileStatus {
+	width: 100%;
+	display: flex;
+}
+.removeFriend {	
+	padding: .75em 1.5em;
+	border:none;
+	border-radius:5px;
+	font-size:1rem;
+	cursor:pointer;
+	transition: 100ms linear;
+	color:#fff;
+}
+.removeFriendForm {
+	margin-left: auto;
+}
+/* Settings styling */
+.settingsContainer {
+	color: #8d9297;
+	flex:1;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#accountSettings {
+	width: 100%;
+}
